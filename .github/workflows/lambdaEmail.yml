@@ -21,12 +21,12 @@ jobs:
 
        - name: Step 3 - Creating zip for lambda function
          run: |
-           zip lambdaFunction.zip lambdaFunction.js
+           zip lambdaFunction.zip index.js
            ls -al
 
        - name: Step 4 - Deploying the serverless lambda function
          run: |
-           aws lambda update-function-code --function-name=csye6225-Verify-Email-Lambda-function --zip-file=fileb://lambdaFunction.zip 
+           aws lambda update-function-code --function-name=csye6225-Verify-Email-Lambda-function --zip-file=fileb://index.zip 
 
        - name: Step 5 - Cleanup
          run: |
