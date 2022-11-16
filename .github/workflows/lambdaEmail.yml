@@ -1,14 +1,10 @@
 name: CI/CD for Lambda Function to Send SES emails
 
- env:
-   AWS_REGION: us-east-1
-   AWS_LAMBDA_FUNCTION_NAME: csye6225-Verify Email-Lambda-function
-
- on:
+on:
    push:
      branches: [main]
 
- jobs:  
+jobs:  
    build:
      runs-on: ubuntu-latest
      name: Build and Deploy Serverless for Lambda Function to Send SES emails
@@ -21,7 +17,7 @@ name: CI/CD for Lambda Function to Send SES emails
          with:
            aws-access-key-id: ${{ secrets.AWS_DEMO_USER_ACCESS_KEY }}
            aws-secret-access-key: ${{ secrets.AWS_DEMO_USER_SECRET_ACCESS_KEY }}
-           aws-region: ${{ env.AWS_REGION }}
+           aws-region: us-east-1
 
        - name: Step 3 - Creating zip for lambda function
          run: |
@@ -30,7 +26,7 @@ name: CI/CD for Lambda Function to Send SES emails
 
        - name: Step 4 - Deploying the serverless lambda function
          run: |
-           aws lambda update-function-code --function-name=${{ env.AWS_LAMBDA_FUNCTION_NAME }} --zip-file=fileb://function.zip 
+           aws lambda update-function-code --function-name=csye6225-Verify Email-Lambda-function --zip-file=fileb://function.zip 
 
        - name: Step 5 - Cleanup
          run: |
