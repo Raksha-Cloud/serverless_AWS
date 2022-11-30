@@ -57,8 +57,8 @@ console.log('Loading Lambda function');
                               Charset: "UTF-8",
                               Data: `<h3> Hello ${first_name} ${last_name},</h3>
                                     <h4>  Welcome to ${domainEnv}.rakshakagadaluraju.me </h4><br>
-                                    <p>Please click the following link: <a href="http://${domainEnv}.rakshakagadaluraju.me/v1/verifyUser?email=${username}&token=${userToken}">Email verification link</a> or <br>
-                                    paste the following link in the browser: http://${domainEnv}.rakshakagadaluraju.me/v1/verifyUser?email=${username}&token=${userToken} to verify your account with us.<br><br><br><br>
+                                    <p>Please click the following link: <a href="https://${domainEnv}.rakshakagadaluraju.me/v1/verifyUser?email=${username}&token=${userToken}">Email verification link</a> or <br>
+                                    paste the following link in the browser: https://${domainEnv}.rakshakagadaluraju.me/v1/verifyUser?email=${username}&token=${userToken} to verify your account with us.<br><br><br><br>
                                     Regards,<br>
                                     Team rakshakagadaluraju.me<br></p><br>`,
                             },
